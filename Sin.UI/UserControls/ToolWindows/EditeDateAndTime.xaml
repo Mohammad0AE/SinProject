@@ -1,0 +1,75 @@
+﻿<Window x:Class="Sin.UI.UserControls.ToolWindows.EditeDateAndTime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Sin.UI.UserControls.ToolWindows"
+        mc:Ignorable="d"
+        Title="EditeDateAndTime" Background="Transparent" AllowsTransparency="True" Height="130" FlowDirection="RightToLeft" Width="350" WindowStyle="None" WindowStartupLocation="CenterOwner" >
+  
+        <MaterialDesign:Card  UniformCornerRadius="10" Background="Transparent">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="25"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"> 
+                <Button Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25">
+                    <StackPanel Margin="-5" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <MaterialDesign:PackIcon HorizontalAlignment="Center" Foreground="Red" Kind="Close"></MaterialDesign:PackIcon>
+
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <MaterialDesign:Card Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="4">
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox  Margin="1"  Height="98" Grid.RowSpan="3">
+                        <StackPanel>
+                            <StackPanel  Orientation="Horizontal">
+
+                                <Label Content="دقیقه:" Width="45" />
+                                <MaterialDesign:NumericUpDown Maximum="59" Minimum="0"></MaterialDesign:NumericUpDown>
+
+
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" >
+                                <Label Content="ساعت:" Width="45"/>
+                                <MaterialDesign:NumericUpDown Minimum="1" Maximum="24"></MaterialDesign:NumericUpDown>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </GroupBox>
+                    <GroupBox>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                            
+                            <Label Content="روز"></Label>
+                            <MaterialDesign:NumericUpDown Minimum="1" Maximum="31"></MaterialDesign:NumericUpDown>
+                        </StackPanel>
+                        
+                    </GroupBox>
+                   
+                </StackPanel>
+           
+            </MaterialDesign:Card>
+       
+  
+        </Grid>
+        </MaterialDesign:Card>
+    
+</Window>

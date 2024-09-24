@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush Color="#011627"  x:Key="foreground"/>
+    <SolidColorBrush Color="#DDE3E9" x:Key="border"/>
+    <LinearGradientBrush x:Key="background">
+        <GradientStop Color="#FFFFFF" Offset=".1"/>
+        <GradientStop Color="#F9F9F9" Offset="0"/>
+    </LinearGradientBrush>
+</ResourceDictionary>

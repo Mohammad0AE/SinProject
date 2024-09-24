@@ -1,0 +1,189 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.HomeUserControls.AddKarteksUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:karmandanuc="clr-namespace:Sin.UI.UserControls.KarmandanUserControls"
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Sin.UI.UserControls.HomeUserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="MaterialDesign:Card">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value=".1"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+           
+        </Grid.RowDefinitions>
+ 
+        
+        <MaterialDesign:Card  UniformCornerRadius="15" Grid.Row="0" Width="180" Padding="5" HorizontalAlignment="Left" Margin="10 2">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="تاریخ :" FontWeight="Bold"  VerticalAlignment="Center" ></Label>
+                <TextBox VerticalContentAlignment="Center" Text="1403/01/01" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}" FontWeight="Bold">
+                   
+                </TextBox>
+                <Button  Style="{StaticResource MaterialDesignFlatButton}" ToolTip="جهت تغییر تاریخ کاردکس جاری">
+                    <MaterialDesign:PackIcon Kind="DateRange" />
+                </Button>
+            
+            </StackPanel>
+        </MaterialDesign:Card>
+     
+        <StackPanel  Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="0 10">
+           
+            <GroupBox   FontWeight="Bold"   >
+            
+                <DataGrid Style="{StaticResource MaterialDesignDataGrid}" MaxHeight="550" MaxWidth="1250" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Center"   Name="dgvKarteks" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"  >
+                  
+                    <DataGrid.Columns>
+
+                        <DataGridTemplateColumn >
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock Text="کد"></TextBlock>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="DataGridCell">
+                                    <TextBox  Text="{Binding id}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  >
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock Text="نام"></TextBlock>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="DataGridCell">
+                                    <TextBox  Text="{Binding name}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn >
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock Text="تاریخ"></TextBlock>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="DataGridCell">
+                                    <TextBox  Text="{Binding tarikh}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  >
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock Text="حضور"></TextBlock>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="DataGridCell">
+                                    <CheckBox Style="{StaticResource MaterialDesignCheckBox}"  IsChecked="{Binding hozor}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="شیفت روز" >
+                            <DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="Transparent" />
+
+                                </Style>
+                            </DataGridTemplateColumn.HeaderStyle>
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="StackPanel">
+                                    <MaterialDesign:Card Background="Transparent" MinWidth="300" HorizontalAlignment="Center"  >
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="ورود:" VerticalContentAlignment="Center"/>
+                                            <TextBox Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+                                            <Label Content="خروج:" VerticalContentAlignment="Center"/>
+                                            <TextBox Width="100" VerticalAlignment="Center" HorizontalContentAlignment="Center" />
+                                        </StackPanel>
+                               
+                                    </MaterialDesign:Card>
+                                   
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="شیفت شب"  >
+                      
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="StackPanel">
+                                    <MaterialDesign:Card  MinWidth="300" HorizontalAlignment="Center" Background="Transparent" >
+                                        <StackPanel Background="Transparent" Orientation="Horizontal">
+                                            <Label Content="ورود:" VerticalContentAlignment="Center"/>
+                                            <TextBox Width="100" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+                                            <Label Content="خروج:" VerticalContentAlignment="Center"/>
+                                            <TextBox Background="Transparent" Width="100" HorizontalContentAlignment="Center"  VerticalAlignment="Center"/>
+                                        </StackPanel>
+
+                                    </MaterialDesign:Card>
+
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="مرخصی ساعتی" >
+                            
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="Button" >
+                                    <Button Background="Transparent" Style="{StaticResource MaterialDesignFlatButton}" Height="30" Width="40" >
+                                        <StackPanel Margin="-5">
+                                            <MaterialDesign:PackIcon  Kind="DocumentSign"/>
+                                        </StackPanel>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Margin="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <MaterialDesign:Card UniformCornerRadius="25" Width="150" Height="50">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="تعداد حاضرین :" FontWeight="SemiBold" Style="{StaticResource MaterialDesignLabel}" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <TextBlock Text="15" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignButtonTextBlock}"/>
+                </StackPanel>
+            </MaterialDesign:Card>
+            <MaterialDesign:Card UniformCornerRadius="25" Height="50" >
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button  Style="{StaticResource MaterialDesignFlatButton}" Grid.Column="0" Margin="0 0 2 0" Height="50">
+                        <StackPanel Orientation="Horizontal" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-10">
+                            <MaterialDesign:PackIcon Kind="ContentSaveAll" VerticalAlignment="Center" HorizontalContentAlignment="Center"  ></MaterialDesign:PackIcon>
+                            <Label Content="ذخیره" HorizontalAlignment="Center"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Button  Style="{StaticResource MaterialDesignFlatButton}" Grid.Column="1" Height="50">
+                        <StackPanel Orientation="Horizontal" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-10">
+                            <MaterialDesign:PackIcon Kind="RefreshCircle" VerticalAlignment="Center" HorizontalContentAlignment="Center"  ></MaterialDesign:PackIcon>
+                            <Label Content="بروزرسانی" HorizontalAlignment="Center"></Label>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                
+                    
+                   
+             
+            </MaterialDesign:Card>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

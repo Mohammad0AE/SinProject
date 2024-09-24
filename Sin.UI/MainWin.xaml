@@ -1,0 +1,111 @@
+﻿<Window x:Class="Sin.UI.MainWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sin.UI"
+        xmlns:UCs="clr-namespace:Sin.UI.UserControls"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Width="1200" Height="900" FontFamily="{StaticResource VazirMedium}" Style="{StaticResource MaterialDesignWindow}"  >
+
+    <Grid  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <MaterialDesign:PackIcon Kind="Close" Name="closebtn" MouseLeftButtonDown="closebtn_MouseLeftButtonDown" Foreground="{DynamicResource foreground}"/>
+            <MaterialDesign:PackIcon Margin="5 0" Kind="Maximize" MouseDoubleClick="PackIcon_MouseDoubleClick" Foreground="{DynamicResource foreground}"/>
+            <MaterialDesign:PackIcon Kind="Minimize" Margin="5 0" Foreground="{DynamicResource foreground}"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Right">
+            <MaterialDesign:PopupBox Foreground="{DynamicResource foreground}" 
+                                     Background="{DynamicResource background}">
+                <StackPanel Width="80">
+                    <RadioButton Click="lighttheme_Click"  x:Name="lighttheme" Content="تم روشن"/>
+                    <RadioButton Click="Darktheme_Click"  x:Name="Darktheme" Content="تم تاریک"/>
+                </StackPanel>
+
+            </MaterialDesign:PopupBox>
+        </StackPanel>
+        <DockPanel HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="2"   >
+
+
+
+            <!--#region RightMenu-->
+          
+
+                <TabControl HorizontalAlignment="Left" Margin="0 40" Style="{StaticResource MaterialDesignUniformTabControl}" TabStripPlacement="Left" >
+                    <TabItem HorizontalAlignment="Left">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Kind="Home" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="منوی اصلی"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <UCs:HomeUC />
+                    </TabItem>
+                    <TabItem HorizontalAlignment="Left">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Kind="WeightKg" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="توین"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                    </TabItem>
+                    <TabItem HorizontalAlignment="Left">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <MaterialDesign:PackIcon Kind="InvoiceLineItems" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="تعاریف و آیتم ها"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <UCs:ItemsUC/>
+                    </TabItem>
+                    <TabItem HorizontalAlignment="Left">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <MaterialDesign:PackIcon Kind="AttachMoney" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="حسابداری"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                    </TabItem>
+
+
+                </TabControl>
+
+            
+            <!--#endregion-->
+
+            <!--#endregion middle Panel-->
+            
+            <!--#endregion-->
+
+
+        </DockPanel>
+        <StackPanel Margin="10 0" Width="55" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Bottom">
+            <Button Background="Transparent"  HorizontalAlignment="Left" BorderBrush="Transparent" >
+                <StackPanel  >
+                    <MaterialDesign:PackIcon Width="30" Height="30" Cursor="Hand" BorderBrush="{DynamicResource border}"   Kind="SettingsOutline" Foreground="{DynamicResource foreground}"></MaterialDesign:PackIcon>
+
+                </StackPanel>
+            </Button>
+
+            <Button Click="lighttheme_Click" Background="Transparent" Margin="0 20" HorizontalAlignment="Left" BorderBrush="Transparent">
+                <StackPanel >
+                    <MaterialDesign:PackIcon Width="30" Height="30" Cursor="Hand" BorderBrush="{DynamicResource border}"   Kind="ExitToApp" Foreground="{DynamicResource foreground}"></MaterialDesign:PackIcon>
+
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+
+
+
+</Window>
