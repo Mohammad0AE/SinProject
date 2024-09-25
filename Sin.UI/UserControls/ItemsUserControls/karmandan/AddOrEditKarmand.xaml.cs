@@ -14,12 +14,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sin.UI.UserControls.KarmandanUserControls
+namespace Sin.UI.UserControls.ItemsUserControls.karmandan
 {
-    /// <summary>
-    /// Interaction logic for KarmandanUC.xaml
-    /// </summary>
-    public partial class KarmandanUC : UserControl
+
+    public partial class AddOrEditKarmand : UserControl
     {
         public class Karmand
         {
@@ -64,7 +62,7 @@ namespace Sin.UI.UserControls.KarmandanUserControls
         };
 
 
-        public KarmandanUC()
+        public AddOrEditKarmand()
         {
             InitializeComponent();
             dgvKarmand.ItemsSource = klist;

@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Style TargetType="Window" x:Key="Windialog">
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="WindowState" Value="Normal"/>
+
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate TargetType="Window" >
+                    
+                        <Border UseLayoutRounding="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                                <Button Style="{StaticResource MaterialDesignFlatButton}"  Name="btnClose">
+                                    <StackPanel Orientation="Horizontal" Margin="-5">
+                                        <MaterialDesign:PackIcon Kind="Close"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Style="{StaticResource MaterialDesignFlatButton}"  Name="btnMaximize">
+                                    <StackPanel Orientation="Horizontal" Margin="-5">
+                                        <MaterialDesign:PackIcon Kind="Maximize"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                            <Grid Grid.Row="1" Background="Red" Height="560"></Grid>
+                        </Grid>
+                        </Border>
+                   
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        
+    </Style>
+</ResourceDictionary>

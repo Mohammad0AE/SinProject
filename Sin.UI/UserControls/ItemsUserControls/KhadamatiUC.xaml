@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.ItemsUserControls.KhadamatiUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sin.UI.UserControls.ItemsUserControls"
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft" MinWidth="1100">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <MaterialDesign:Card UniformCornerRadius="5">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="نوع خدماتی :"/>
+                    <ComboBox Width="200" IsEditable="True">
+                        <ComboBoxItem Content="رستوران و بیرون بر"/>
+                        <ComboBoxItem Content="تامین کننده ابزارآلات"/>
+                        <ComboBoxItem Content="تامین کننده سوخت و سیالات"/>
+                        <ComboBoxItem Content="تعمیر کار دستگاه و ماشین آلات"/>
+                    </ComboBox>
+                    <Label Content="شرح:" Margin="5 0"/>
+                    <TextBox Width="250" FontSize="12"/>
+                    <CheckBox Content="رسمی" Margin="20 0"/>
+                    <CheckBox Content="فعال" Margin="20 0"/>
+                </StackPanel>
+            </MaterialDesign:Card>
+            <MaterialDesign:Card UniformCornerRadius="5" Margin="0 20">
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="عنوان :" Width="80" VerticalAlignment="Center"/>
+                        <TextBox Width="150"/>
+                        <Label Content="طرف حساب :" Width="80" VerticalAlignment="Center"/>
+                        <ComboBox Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <Label Content="شماره تماس :" Width="80"/>
+                        <TextBox Width="150"/>
+                        <Label Content="ایمیل:" Width="80"/>
+                        <TextBox Width="150"/>
+                        <CheckBox Content="فعال" Margin="10 0"/>
+                    </StackPanel>
+                </StackPanel>
+            </MaterialDesign:Card>
+            <MaterialDesign:Card UniformCornerRadius="5" Margin="0 10">
+                <StackPanel>
+                    <StackPanel Margin="0 1" Orientation="Horizontal">
+                        <MaterialDesign:PackIcon Margin="5 0 0 0" Kind="Search" VerticalAlignment="Center"/>
+                        <TextBox Width="250"/>
+                    </StackPanel>
+                    <DataGrid MaxHeight="250" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False"
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="نوع خدماتی"/>
+                            <DataGridTextColumn Header="عنوان"/>
+                            <DataGridTextColumn Header="طرف حساب"/>
+                            <DataGridTextColumn Header="شماره تماس"/>
+                            <DataGridTextColumn Header="ایمیل"/>
+                            <DataGridCheckBoxColumn Header="رسمی"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </MaterialDesign:Card>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="5 0">
+                <StackPanel Margin="-5" Orientation="Horizontal">
+                    <MaterialDesign:PackIcon Kind="ContentSave" VerticalAlignment="Center"/>
+                    <Label Content="ذخیره" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="20 0">
+                <StackPanel Margin="-5" Orientation="Horizontal">
+                    <MaterialDesign:PackIcon Kind="Pencil" VerticalAlignment="Center"/>
+                    <Label Content="جدید" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

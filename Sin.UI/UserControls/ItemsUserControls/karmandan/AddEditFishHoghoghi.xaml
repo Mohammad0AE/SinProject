@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.ItemsUserControls.karmandan.AddEditFishHoghoghi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sin.UI.UserControls.ItemsUserControls.karmandan"
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <MaterialDesign:Card UniformCornerRadius="5">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="نام کارمند:" VerticalAlignment="Center" Width="80"/>
+                    <ComboBox Width="200" />
+                    <Label Margin="5 0" Content="ماه:" VerticalAlignment="Center" Width="80"/>
+                    <ComboBox Width="100" />
+                    <Button Name="btnAddToList" Click="btnAddToList_Click" Style="{StaticResource MaterialDesignFlatButton}" Margin="20 0">
+                        <StackPanel Orientation="Horizontal" Margin="-5">
+                            <MaterialDesign:PackIcon Kind="Add" VerticalAlignment="Center"/>
+                            <Label Content="اضافه به لیست" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </MaterialDesign:Card>
+
+            <StackPanel >
+                <DataGrid MaxHeight="450" Name="dgvFishhoghogh" Margin="0 20" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False"  AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding namkarmand}" Header="نام کارمند"/>
+                        <DataGridTextColumn Header="ماه" Binding="{Binding mah}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.RowDetailsTemplate >
+                        <DataTemplate>
+                            <Expander   Margin="10" Header="مزایا و کسورات">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                                    <StackPanel>
+                                        <MaterialDesign:Card>
+                                            <StackPanel Margin="2" Orientation="Horizontal">
+                                                <DataGrid MaxHeight="250"  ItemsSource="{Binding mazayas}" CanUserAddRows="True" CanUserDeleteRows="False" AutoGenerateColumns="False">
+                                                    <DataGrid.Columns>
+                                                        <DataGridTextColumn Binding="{Binding m_title}" Header="مزایا" />
+                                                        <DataGridTextColumn Binding="{Binding m_price}"  Header="مبلغ"/>
+
+                                                    </DataGrid.Columns>
+                                                </DataGrid>
+                                                <DataGrid MaxHeight="250"  ItemsSource="{Binding kosorats}"  CanUserAddRows="True" CanUserDeleteRows="False" AutoGenerateColumns="False">
+                                                    <DataGrid.Columns>
+                                                        <DataGridTextColumn Binding="{Binding k_title}" Header="کسورات" />
+                                                        <DataGridTextColumn Binding="{Binding k_price}"  Header="مبلغ"/>
+
+                                                    </DataGrid.Columns>
+                                                </DataGrid>
+
+
+                                            </StackPanel>
+                                        </MaterialDesign:Card>
+
+                                        <MaterialDesign:Card UniformCornerRadius="5">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label  Content="جمع مزایا :"/>
+
+                                                <TextBlock Width="150" Text="250000000"/>
+                                                <Label Content="جمع کسورات :"/>
+                                                <TextBlock Width="150" Text="50000000"/>
+                                                <Label Content="خالص دریافتی:"/>
+                                                <TextBlock Width="150" Text="200000000"/>
+
+
+                                                <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="10 0">
+                                                    <StackPanel Margin="-5" Orientation="Horizontal">
+                                                        <MaterialDesign:PackIcon Kind="ContentSave" VerticalAlignment="Center"/>
+                                                        <Label Content="ذخیره" VerticalAlignment="Center"/>
+                                                    </StackPanel>
+                                                </Button>
+
+
+
+                                            </StackPanel>
+
+                                        </MaterialDesign:Card>
+                                    </StackPanel>
+
+                                </ScrollViewer>
+
+                            </Expander>
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>

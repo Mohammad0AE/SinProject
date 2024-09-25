@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.ItemsUserControls.karmandan.AddOrEditeMorkhasi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Sin.UI.UserControls.ItemsUserControls.karmandan"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft" >
+  
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+               
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <MaterialDesign:Card Margin="5" UniformCornerRadius="5" Height="35">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Width="80" Content="نام کارمند:" VerticalAlignment="Center" Margin="5 0"/>
+                        <ComboBox IsEditable="True" Width="150"/>
+                        <Label VerticalAlignment="Center" Content="تاریخ:" Width="80" Margin="5 0"/>
+                    <hc:PersianDatePicker SelectedDate="{x:Static sys:DateTime.Now}" SelectedDateFormat="Long"/>
+
+                    <Label Width="80" VerticalAlignment="Center" Content="کاربر :" Margin="5 0"/>
+                        <TextBox Width="150" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5" UniformCornerRadius="5" Height="35">
+                    <StackPanel  Orientation="Horizontal">
+                        <Label Content="از ساعت :" VerticalAlignment="Center"/>
+
+                        <MaterialDesign:TimePicker Is24Hours="True" SelectedTimeFormat="Short" Width="80" Language="fa-IR" />
+                        <Label Content="تا ساعت :" VerticalAlignment="Center" Margin="5 0" />
+
+
+                        <MaterialDesign:TimePicker Width="80" SelectedTimeFormat="Short" Is24Hours="True" Language="fa-IR" />
+                        <Label Content="جمع مرخصی ساعتی :"  VerticalAlignment="Center" Margin="10 0" />
+                        <TextBox Width="150" IsReadOnly="True"/>
+                    </StackPanel>
+
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5" UniformCornerRadius="5" Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Style="{StaticResource MaterialDesignFlatButton}">
+                            <StackPanel Orientation="Horizontal" Margin="-5">
+                                <MaterialDesign:PackIcon  VerticalAlignment="Center" Kind="ContentSave"/>
+                                <Label Content="ذخیره" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}">
+                            <StackPanel Orientation="Horizontal" Margin="-5">
+                                <MaterialDesign:PackIcon  VerticalAlignment="Center" Kind="Pencil"/>
+                                <Label Content="جدید" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    <Button Click="Button_Click" Style="{StaticResource MaterialDesignFlatButton}">
+                        <StackPanel Orientation="Horizontal" Margin="-5">
+                            <MaterialDesign:PackIcon  VerticalAlignment="Center" Kind="Printer"/>
+                            <Label Content="چاپ" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Click="Button_Click" Style="{StaticResource MaterialDesignFlatButton}">
+                            <StackPanel Orientation="Horizontal" Margin="-5">
+                                <MaterialDesign:PackIcon  VerticalAlignment="Center" Kind="Trash"/>
+                                <Label Content="حذف" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                </MaterialDesign:Card>
+                </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <DataGrid  AutoGenerateColumns="False" IsReadOnly="True" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="نام کارمند"/>
+                        <DataGridTextColumn Header="تاریخ" />
+                        <DataGridTextColumn Header="از ساعت"/>
+                        <DataGridTextColumn Header="تا ساعت"/>
+                        <DataGridTextColumn Header="جمع مرخصی ساعتی"/>
+                        <DataGridTextColumn Header="کاربر"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" >
+                    <Label Margin="10 0 0 0" VerticalAlignment="Center" Content="مجموع مرخصی ساعتی :"/>
+                    <TextBox IsReadOnly="True" Text="15:30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+   
+
+        </Grid>
+        
+  
+    
+</UserControl>

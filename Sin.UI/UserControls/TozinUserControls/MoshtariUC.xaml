@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.TozinUserControls.MoshtariUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sin.UI.UserControls.TozinUserControls"
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" FlowDirection="RightToLeft">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+           
+            <RowDefinition Height="40"/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            
+            <MaterialDesign:Card UniformCornerRadius="5">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                    <Label Content="گروه مشتری :"/>
+                    <ComboBox IsEditable="True" Width="150">
+                        <ComboBoxItem Content="حقیقی"/>
+                        <ComboBoxItem Content="حقوقی"/>
+                    </ComboBox>
+                    <CheckBox Margin="20 0" Content="رسمی"/>
+                    <CheckBox Margin="20 0" Content="فعال"/>
+                </StackPanel>
+                
+            </MaterialDesign:Card>
+            <MaterialDesign:Card Margin="5">
+                <GroupBox Header="مشخصات مشتری">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="نام مشتری :" Width="100" VerticalAlignment="Center"/>
+                            <TextBox Width="200" VerticalAlignment="Center"/>
+                            <Label Width="100" Margin="10 0" Content="طرف حساب :" VerticalAlignment="Center"/>
+                            <ComboBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 10" VerticalAlignment="Center">
+                            <Label Content="شماره اقتصادی :" Width="100" VerticalAlignment="Center"/>
+                            <TextBox Width="200"/>
+                            <Label Content="کدپستی :" Width="100" Margin="10 0" VerticalAlignment="Center"/>
+                            <TextBox Width="200" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+                            <Label Content="شماره تماس :" Width="100" VerticalAlignment="Center"/>
+                            <TextBox Width="200"/>
+                            <Label Content="آدرس :" Width="100" Margin="10 0" VerticalAlignment="Center"/>
+                            <TextBox Width="300" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 10" VerticalAlignment="Center">
+                            <Label Content="آدرس ایمیل:" Width="100" VerticalAlignment="Center"/>
+                            <TextBox Width="200"/>
+                            <CheckBox Content="ارسال پیام" Margin="20 0"/>
+                            <CheckBox Margin="20 0" Content="فعال"/>
+
+                        </StackPanel>
+                        <CheckBox Margin="0 10" Name="chkMahdodiat" Content="محدودیت کامیون" VerticalAlignment="Center"></CheckBox>
+
+                    </StackPanel>
+                </GroupBox>
+       
+            </MaterialDesign:Card>
+            <MaterialDesign:Card UniformCornerRadius="5" Margin="5">
+                <GroupBox Header=" تعیین محدودیت کامیون های مشتری " IsEnabled="{Binding ElementName=chkMahdodiat,Path=IsChecked}" >
+                    
+                  
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Content="کد کامیون :" VerticalAlignment="Center"/>
+                            <TextBox Width="80"/>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}">
+                                <MaterialDesign:PackIcon Kind="Search"/>
+                            </Button>
+                            <Label Content="شماره کامیون :" VerticalAlignment="Center"/>
+                            <TextBox Width="150" />
+                            <Label Content="راننده  :" VerticalAlignment="Center"/>
+                            <TextBox Width="150"/>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="10 0">
+                                <MaterialDesign:PackIcon Kind="Add"/>
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}">
+                                <MaterialDesign:PackIcon Kind="Remove"/>
+                            </Button>
+                        </StackPanel>
+                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="کد کامیون"/>
+                                <DataGridTextColumn Header="شماره کامیون"/>
+                                <DataGridTextColumn Header="راننده "/>
+                                
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+           
+                   
+                </GroupBox>
+            </MaterialDesign:Card>
+            <MaterialDesign:Card UniformCornerRadius="5" >
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <MaterialDesign:PackIcon Kind="Search" VerticalAlignment="Center" />
+                        <TextBox Width="250" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <DataGrid Name="dgvMoshtari" MaxHeight="250" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="گروه مشتری" Binding="{Binding nameg}"/>
+                            <DataGridTextColumn Header="نام " Binding="{Binding name}"/>
+                            <DataGridTextColumn Header="طرف حساب " Binding="{Binding hesab}"/>
+                            <DataGridTextColumn Header="شماره تماس" Binding="{Binding mobile}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </MaterialDesign:Card>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Bottom">
+            <Button Style="{StaticResource MaterialDesignFlatButton}">
+                <StackPanel Margin="-5" Orientation="Horizontal">
+                    <MaterialDesign:PackIcon VerticalAlignment="Center" Kind="ContentSave"/>
+                    <Label Content="ذخیره"/>
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFlatButton}">
+                <StackPanel Margin="-5" Orientation="Horizontal">
+                    <MaterialDesign:PackIcon VerticalAlignment="Center" Kind="Pencil"/>
+                    <Label Content="جدید"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

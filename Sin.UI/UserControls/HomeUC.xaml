@@ -7,51 +7,65 @@
              xmlns:local="clr-namespace:Sin.UI.UserControls"
              xmlns:UCs="clr-namespace:Sin.UI.UserControls.HomeUserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="800" FlowDirection="RightToLeft" >
-   
-    <StackPanel>
-        
-  
+             d:DesignHeight="1000" MinWidth="1100" d:DesignWidth="800" FlowDirection="RightToLeft" >
+
+    
+        <StackPanel >
+
             <TabControl Style="{StaticResource MaterialDesignUniformTabControl}" TabStripPlacement="Top" HorizontalAlignment="Left"  >
-                
-                    <TabItem   >
-                        <TabItem.Header>
-                            <StackPanel Orientation="Horizontal">
-                        <MaterialDesign:PackIcon Kind="FileDocumentAdd" VerticalAlignment="Center" />
-                        <TextBlock Text="فاکتور توزین" ></TextBlock>
-                            </StackPanel>
-                        </TabItem.Header>
-                <UCs:FactorUC  ></UCs:FactorUC>
 
-            </TabItem>
-            <TabItem   >
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <MaterialDesign:PackIcon Kind="FileDocumentAdd" VerticalAlignment="Center" />
+                            <TextBlock Text="فاکتور توزین" ></TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <UCs:FactorUC  />
+
+                </TabItem>
+                <TabItem   >
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <MaterialDesign:PackIcon Kind="FileDocumentAddOutline"  VerticalAlignment="Center" />
+                            <TextBlock Text="فاکتور متفرقه" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <UCs:OtherFactorUC  ></UCs:OtherFactorUC>
+
+                </TabItem>
+                <TabItem  >
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <MaterialDesign:PackIcon Kind="FileDocumentAdd"  VerticalAlignment="Center" ></MaterialDesign:PackIcon>
+                            <TextBlock Text="کارتکس" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <UCs:AddKarteksUC ></UCs:AddKarteksUC>
+
+                </TabItem>
+
+
+
+            <TabItem>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal" >
-                        <MaterialDesign:PackIcon Kind="FileDocumentAddOutline"  VerticalAlignment="Center" />
-                        <TextBlock Text="فاکتور متفرقه" />
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <MaterialDesign:PackIcon Kind="CashCheck" VerticalAlignment="Center" />
+                        <TextBlock Text="دریافت و پرداخت"  VerticalAlignment="Center"></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <UCs:OtherFactorUC  ></UCs:OtherFactorUC>
+                <UCs:DaryaftPardakhtUC  />
 
             </TabItem>
-            <TabItem  >
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal" >
-                        <MaterialDesign:PackIcon Kind="FileDocumentAdd"  VerticalAlignment="Center" ></MaterialDesign:PackIcon>
-                        <TextBlock Text="کارتکس" />
-                    </StackPanel>
-                </TabItem.Header>
-                <UCs:AddKarteksUC ></UCs:AddKarteksUC>
-
-            </TabItem>
-
-
-
-
 
 
 
         </TabControl>
-                  
-    </StackPanel>
+
+
+
+
+        </StackPanel>
+
+   
 </UserControl>

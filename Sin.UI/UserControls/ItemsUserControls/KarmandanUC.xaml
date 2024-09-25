@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.ItemsUserControls.KarmandanUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sin.UI.UserControls.ItemsUserControls"
+             xmlns:UCs="clr-namespace:Sin.UI.UserControls.ItemsUserControls.karmandan"
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+            
+             d:DesignHeight="450" d:DesignWidth="1100" FlowDirection="RightToLeft">
+ 
+
+      
+        <Grid Margin="20" MinWidth="1100">
+            
+            <TabControl TabStripPlacement="Bottom" Style="{StaticResource MaterialDesignUniformTabControl}">
+                <TabItem Header="عنوان شغلی">
+                    <UCs:AddEditTilteShoghli/>
+                    </TabItem>
+                
+                <TabItem Header="کارمندان">
+                    <UCs:AddOrEditKarmand/>
+                </TabItem>
+                <TabItem Header="مرخصی کارمندان">
+                    <UCs:AddOrEditeMorkhasi/>
+                </TabItem>
+            <TabItem Header="فیش حقوقی کارمندان">
+                <UCs:AddEditFishHoghoghi/>
+            </TabItem>
+                
+            </TabControl>
+            
+            
+           
+
+
+        </Grid>
+    
+
+</UserControl>

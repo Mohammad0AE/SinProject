@@ -1,0 +1,193 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.ItemsUserControls.company.AddEditSahamdar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sin.UI.UserControls.ItemsUserControls.company"
+            xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="800" FlowDirection="RightToLeft">
+   
+        <Grid Margin="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.RowSpan="2">
+                <MaterialDesign:Card UniformCornerRadius="10" Margin="10">
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Label Content="شرکت :"/>
+                        <ComboBox Width="250"/>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="10 0 10 10" UniformCornerRadius="10">
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" Content="نام سهامدار:"/>
+                        <TextBox Width="220"/>
+                        <Label HorizontalAlignment="Left" Content="سهم (درصد):"/>
+                        <TextBox  Width="60">
+
+                        </TextBox>
+                        <Label Content="%"/>
+                    </StackPanel>
+                </MaterialDesign:Card>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+
+                <MaterialDesign:Card UniformCornerRadius="10"  Padding="5" >
+                    <StackPanel Orientation="Horizontal">
+                        <Button Margin="10 0" Style="{StaticResource MaterialDesignFlatButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Margin="1" Kind="ContentSave" VerticalAlignment="Center"/>
+                                <TextBlock Text="ذخیره"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Margin="1" Kind="Pencil" VerticalAlignment="Center"/>
+                                <TextBlock Text="جدید"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+            </StackPanel>
+            <!--#region List Sahamdaran Expander -->
+            <Expander IsExpanded="True" Margin="0 10" ExpandDirection="Down"  Grid.Row="3">
+                <Expander.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <MaterialDesign:PackIcon Kind="AccountCash"/>
+                        <TextBlock Text="لیست سهامداران"/>
+                    </StackPanel>
+                </Expander.Header>
+
+                <StackPanel Orientation="Horizontal">
+                    <MaterialDesign:Card UniformCornerRadius="10" Margin="0 0 10 0" MinWidth="300">
+                        <DataGrid Margin="5"  Name="dgvsahamdar" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" CanUserDeleteRows="False">
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding factory}" Header="شرکت" />
+                                <DataGridTextColumn Binding="{Binding name}" Header="سهامدار"/>
+                                <DataGridTextColumn Binding="{Binding sahm}" Header="سهم(%)"/>
+                            </DataGrid.Columns>
+                            <DataGrid.RowDetailsTemplate>
+                                <DataTemplate >
+
+                                    <Expander ExpandDirection="Down" >
+                                        <Expander.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <MaterialDesign:PackIcon Kind="AccountCashOutline" />
+                                                <TextBlock Text="لیست تنخواه گردان ها"/>
+                                            </StackPanel>
+                                        </Expander.Header>
+                                        <DataGrid Name="dgvtankhah" AutoGenerateColumns="False" ItemsSource="{Binding lsttankhah}" IsReadOnly="True" CanUserAddRows="False"
+                                          CanUserDeleteRows="False">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Binding="{Binding namet}" Header="نام تنخواه"/>
+                                                <DataGridTextColumn Binding="{Binding mobile}" Header="موبایل"/>
+                                                <DataGridTextColumn Binding="{Binding email}" Header="ایمیل"/>
+                                                <DataGridCheckBoxColumn Binding="{Binding faal}" Header="فعال"/>
+                                                <DataGridTextColumn Binding="{Binding desc}" Header="شرح"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </Expander>
+                                </DataTemplate>
+
+                            </DataGrid.RowDetailsTemplate>
+                        </DataGrid>
+
+                    </MaterialDesign:Card>
+
+                    <MaterialDesign:Card   HorizontalAlignment="Right"  >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel >
+
+                                <MaterialDesign:Card Padding="5" Margin="5" UniformCornerRadius="10">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Label Width="100" Content="نام سهامدار :"/>
+                                        <ComboBox Width="250"/>
+
+                                    </StackPanel>
+                                </MaterialDesign:Card>
+
+
+
+                                <MaterialDesign:Card Padding="5" Margin="5" UniformCornerRadius="10">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Label Width="60" Content="نام :" />
+                                        <TextBox Width="150"/>
+                                        <CheckBox  Content="فعال "  Margin="20 0"/>
+                                    </StackPanel>
+
+                                </MaterialDesign:Card>
+
+
+                                <MaterialDesign:Card Padding="5" Margin="5"  UniformCornerRadius="10">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Label Width="60" Content="موبایل :" />
+                                        <TextBox Width="150"/>
+                                        <Label Content="ایمیل :" Width="50"/>
+                                        <TextBox Width="200"/>
+
+                                    </StackPanel>
+                                </MaterialDesign:Card>
+
+
+
+                                <MaterialDesign:Card Margin="5" Padding="5" UniformCornerRadius="10">
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <Label Content="شرح :" Width="60" />
+                                        <TextBox Width="350"/>
+
+                                    </StackPanel>
+
+                                </MaterialDesign:Card>
+
+
+
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" >
+                                
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Margin="10 0" Style="{StaticResource MaterialDesignFlatButton}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <MaterialDesign:PackIcon Margin="1" Kind="ContentSave" VerticalAlignment="Center"/>
+                                                <TextBlock Text="ذخیره"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <Button Style="{StaticResource MaterialDesignFlatButton}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <MaterialDesign:PackIcon Margin="1" Kind="Pencil" VerticalAlignment="Center"/>
+                                                <TextBlock Text="جدید"/>
+                                            </StackPanel>
+                                        </Button>
+
+                                    </StackPanel>
+                                
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </MaterialDesign:Card>
+                </StackPanel>
+
+            </Expander>
+
+            <!--#endregion-->
+
+
+        </Grid>
+
+   
+</UserControl>

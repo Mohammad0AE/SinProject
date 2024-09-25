@@ -7,443 +7,441 @@
              xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="1300"  d:DesignWidth="1200" FlowDirection="RightToLeft">
-    <Grid>
-        <Grid.Resources>
-            <Style TargetType="MaterialDesign:Card">
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="BorderThickness" Value=".1"></Setter>
-            </Style>
-        </Grid.Resources>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Margin="0 10"  Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Center">
-            <MaterialDesign:Card Padding="5" Margin="2" >
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="نام شرکت :" FontWeight="SemiBold" Width="100"/>
-                    <ComboBox FontWeight="SemiBold"  Width="250" IsEditable="False">
-                        <ComboBoxItem  Content="شرکت شن و ماسه کمال آباد"/>
-                    </ComboBox>
-                </StackPanel>
-            </MaterialDesign:Card>
-
-            <MaterialDesign:Card Background="Transparent" Padding="5" Margin="2">
-                <StackPanel Orientation="Horizontal">
-                    <Label Style="{StaticResource MaterialDesignLabel}" Content="نوع فاکتور :" FontWeight="SemiBold" Width="100"/>
-                    <ComboBox FontWeight="SemiBold" Style="{StaticResource MaterialDesignComboBox}" Width="250" IsEditable="False">
-                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="فاکتور فروش">
-
-                        </ComboBoxItem>
-                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="فاکتور خرید"></ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
-            </MaterialDesign:Card>
-
-        </StackPanel >
-      
-        <StackPanel Grid.ColumnSpan="2" Margin="0 20" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">
-            <MaterialDesign:Card Margin="2 0 0 0" >
-                <StackPanel Orientation="Horizontal" >
-                    <Label  Content="ساعت :" FontWeight="SemiBold" VerticalContentAlignment="Center"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox Name="txtTime" Width="120" Text="14:27" VerticalAlignment="Center"  FontWeight="SemiBold" >
-                        </TextBox>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" >
-                            <StackPanel Margin="-5">
-
-                                <MaterialDesign:PackIcon Kind="ClockOutline" />
-
-                            </StackPanel>
-
-                        </Button>
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            
-            <MaterialDesign:Card Margin="2 0 0 0" >
-                <StackPanel Orientation="Horizontal">
-                    <Label  Content="تاریخ :" VerticalContentAlignment="Center" FontWeight="SemiBold" ></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox Name="txtdate" VerticalAlignment="Center" Width="120" Text="1403/05/29" FontWeight="SemiBold" >
-                        </TextBox>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}">
-                            <StackPanel Margin="-5">
-
-                                <MaterialDesign:PackIcon Kind="DateRange" ></MaterialDesign:PackIcon>
-
-                            </StackPanel>
-
-                        </Button>
-
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="2 0 0 0">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Label  Content="کاربر :" VerticalContentAlignment="Center" FontWeight="SemiBold" ></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox Width="130" Text="محمد ابراهیمی"    FontWeight="SemiBold" >
-                        </TextBox>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" >
-                            <StackPanel Margin="-5">
-
-                                <MaterialDesign:PackIcon Kind="User" ></MaterialDesign:PackIcon>
-
-                            </StackPanel>
-
-                        </Button>
-                    </StackPanel>
-                </StackPanel>
-
-            </MaterialDesign:Card>
-            <MaterialDesign:Card VerticalAlignment="Center" Margin="2 0 2 0">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Label  Content="قرارداد :" VerticalContentAlignment="Center" FontWeight="SemiBold"></Label>
-                    <StackPanel Orientation="Horizontal">
-
-                        <TextBox Width="120" Text="100251" FontWeight="SemiBold">
-                        </TextBox>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}">
-                            <StackPanel Margin="-5">
-
-                                <MaterialDesign:PackIcon Kind="DocumentSign" ></MaterialDesign:PackIcon>
-
-                            </StackPanel>
-
-                        </Button>
-
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-        </StackPanel>
-        <StackPanel Grid.ColumnSpan="2" Margin="0 20" Orientation="Horizontal" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top">
-            <MaterialDesign:Card Margin="2 0 0 0" >
-                <StackPanel Orientation="Horizontal" >
-                    <Label  Content="شماره فاکتور :" FontWeight="Bold"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="120" Text="1024" VerticalAlignment="Center"  FontWeight="Bold" >
-                        </TextBox>
-                 
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-
-            <MaterialDesign:Card Margin="10 0 0 0">
-                <StackPanel Orientation="Horizontal"  >
-                    <CheckBox Style="{StaticResource MaterialDesignCheckBox}" Padding="2"  Content="نشانه گذاری" ></CheckBox>
-                </StackPanel>
-            </MaterialDesign:Card>
-   
-         
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
-            <MaterialDesign:Card>
-                <StackPanel Orientation="Horizontal">
-                    <Label Background="Transparent"  VerticalContentAlignment="Center" Content="کد خریدار  :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="80" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="0">
-                            <MaterialDesign:PackIcon Kind="Search"></MaterialDesign:PackIcon>
-                        </Button>
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="5 0">
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Width="100" Content="نام خریدار  :" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="250" Text="محمد ابراهیمی کته گنبدی اصل"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-                       
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="5 0">
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="وضعیت حساب :" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="250" Text="1205555555"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-        </StackPanel>
-        <StackPanel Margin="0 20" Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
-            <MaterialDesign:Card>
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="کد فروشنده :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="80" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-                        <Button  Margin="0" Style="{StaticResource MaterialDesignFlatButton}">
-                            <MaterialDesign:PackIcon Kind="Search"></MaterialDesign:PackIcon>
-                        </Button>
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="5 0">
-                <StackPanel Orientation="Horizontal">
-                    <Label VerticalContentAlignment="Center" Content="نام فروشنده  :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="250" Text="محمد ابراهیمی"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="5 0">
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="وضعیت حساب :" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="250" Text="1205555555"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            
-        </StackPanel>
+    <MaterialDesign:Card UniformCornerRadius="5" MinWidth="1100">
+        <Grid>
         
-        <StackPanel Margin="0 20" Orientation="Horizontal" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
-            <MaterialDesign:Card>
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="کد کالا :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="0 10"  Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Center">
+                <MaterialDesign:Card Padding="5" Margin="2" >
                     <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="80" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}"  Margin="0">
-                            <MaterialDesign:PackIcon Kind="Search"></MaterialDesign:PackIcon>
-                        </Button>
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="5 0">
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="نام کالا  :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="250" Text="شسته"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="5 0">
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="بهای هر تن :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="250" Text="2700000"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-
-        </StackPanel>
-       
-        <StackPanel  Margin="0" Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
-            <MaterialDesign:Card>
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="کد کامیون :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="80" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="0">
-                            <MaterialDesign:PackIcon Kind="Search"></MaterialDesign:PackIcon>
-                        </Button>
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="5 0">
-                <StackPanel Orientation="Horizontal">
-                    <Label VerticalContentAlignment="Center" Content="نام راننده  :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="250" Text="نام راننده"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
-
-                    </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-
-            <MaterialDesign:Card Margin="5 0 0 0">
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content= "دستگاه بارگیری :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal"/>
-                    <ComboBox Style="{StaticResource MaterialDesignComboBox}" Width="255" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        <ComboBoxItem Content="لودر شرکت"/>
-                        <ComboBoxItem Content="لودر قریشی"/>
-                        <ComboBoxItem Content="بیل شرکت"/>
-                    </ComboBox>
-
-
-                </StackPanel>
-            </MaterialDesign:Card>
-
-        </StackPanel>
-
-        <StackPanel  Margin="0" Orientation="Horizontal" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
-            <MaterialDesign:Card>
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="مقصد :" Width="100" FontWeight="Bold" FontSize="14"></Label>
-                    <StackPanel Orientation="Horizontal">
-                        <ComboBox IsEditable="True"  Style="{StaticResource MaterialDesignComboBox}"  Width="200" Text="شیراز بلوار اتحاد کوجه80 "  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                          
+                        <Label Content="نام شرکت :" FontWeight="SemiBold" Width="100"/>
+                        <ComboBox FontWeight="SemiBold"  Width="250" IsEditable="False">
+                            <ComboBoxItem  Content="شرکت شن و ماسه کمال آباد"/>
                         </ComboBox>
-                      
                     </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            <MaterialDesign:Card Margin="5 0">
-                <StackPanel Orientation="Horizontal">
-                    <ComboBox Style="{StaticResource MaterialDesignComboBox}"  Margin="0 0 2 0"  VerticalContentAlignment="Center" Width="100" FontWeight="Bold" FontSize="14">
-                        <ComboBoxItem IsSelected="True" Content="کرایه هرتن :"></ComboBoxItem>
-                        <ComboBoxItem Content="حق توزین :"></ComboBoxItem>
-                    </ComboBox>
+                </MaterialDesign:Card>
+
+                <MaterialDesign:Card Padding="5" Margin="2">
                     <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="185" Text="2500000"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
+                        <Label Style="{StaticResource MaterialDesignLabel}" Content="نوع فاکتور :" FontWeight="SemiBold" Width="100"/>
+                        <ComboBox FontWeight="SemiBold" Style="{StaticResource MaterialDesignComboBox}" Width="250" IsEditable="False">
+                            <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="فاکتور فروش">
 
+                            </ComboBoxItem>
+                            <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="فاکتور خرید"></ComboBoxItem>
+                        </ComboBox>
                     </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
+                </MaterialDesign:Card>
 
-            <MaterialDesign:Card >
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="نحوه پرداخت :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+            </StackPanel >
 
-                    <ComboBox Style="{StaticResource MaterialDesignComboBox}" Width="129" Text="101"   FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+            <StackPanel Grid.ColumnSpan="2" Margin="0 20" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">
+                <MaterialDesign:Card Margin="2 0 0 0" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Label  Content="ساعت :" FontWeight="SemiBold" VerticalContentAlignment="Center"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="txtTime" Width="120" Text="14:27" VerticalAlignment="Center"  FontWeight="SemiBold" >
+                            </TextBox>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}" >
+                                <StackPanel Margin="-5">
 
-                        <ComboBoxItem Content="نفدی"/>
-                        <ComboBoxItem Content="ملت"/>
-                        <ComboBoxItem Content="کشاورزی"/>
-                        <ComboBoxItem Content="اعتباری"/>
-                    </ComboBox>
+                                    <MaterialDesign:PackIcon Kind="ClockOutline" />
 
+                                </StackPanel>
 
-                </StackPanel>
-            </MaterialDesign:Card>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
 
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 20" VerticalAlignment="Center">
-            <MaterialDesign:Card >
-                <StackPanel Orientation="Horizontal">
-                    <Label  VerticalContentAlignment="Center" Content="توضیحات :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                <MaterialDesign:Card Margin="2 0 0 0" >
                     <StackPanel Orientation="Horizontal">
-                        <TextBox  Width="350" Text="توضیحات........"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
-                        </TextBox>
+                        <Label  Content="تاریخ :" VerticalContentAlignment="Center" FontWeight="SemiBold" ></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="txtdate" VerticalAlignment="Center" Width="120" Text="1403/05/29" FontWeight="SemiBold" >
+                            </TextBox>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}">
+                                <StackPanel Margin="-5">
 
+                                    <MaterialDesign:PackIcon Kind="DateRange" ></MaterialDesign:PackIcon>
+
+                                </StackPanel>
+
+                            </Button>
+
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-            </MaterialDesign:Card>
-            
-        </StackPanel>
-        <StackPanel Grid.Row="9" Grid.Column="0"  >
-            <GroupBox >
-                <StackPanel  Orientation="Horizontal">
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="2 0 0 0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Label  Content="کاربر :" VerticalContentAlignment="Center" FontWeight="SemiBold" ></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="130" Text="محمد ابراهیمی"    FontWeight="SemiBold" >
+                            </TextBox>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}" >
+                                <StackPanel Margin="-5">
 
-                    <StackPanel HorizontalAlignment="Left" Margin="5 0" >
-                        <MaterialDesign:Card >
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="وزن  پر: " Width="80" FontWeight="SemiBold"/>
-                                <TextBox  Width="150" FontWeight="SemiBold"></TextBox>
-                            </StackPanel>
-                        </MaterialDesign:Card>
-                        <MaterialDesign:Card  Margin="0 10">
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="وزن  خالی: "  Width="80" FontWeight="SemiBold"/>
-                                <TextBox Width="150" FontWeight="SemiBold"></TextBox>
-                            </StackPanel>
-                        </MaterialDesign:Card>
-                        <MaterialDesign:Card >
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="وزن  کالا: " Width="80" FontWeight="SemiBold"/>
-                                <TextBox  Width="150" FontWeight="Bold"></TextBox>
-                            </StackPanel>
-                        </MaterialDesign:Card>
-                    </StackPanel>
+                                    <MaterialDesign:PackIcon Kind="User" ></MaterialDesign:PackIcon>
 
+                                </StackPanel>
 
-                    <StackPanel HorizontalAlignment="Right" Margin="5 0" >
-                        <MaterialDesign:Card >
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="بهای کل " Width="100" FontWeight="SemiBold"/>
-                                <TextBox Style="{StaticResource MaterialDesignTextBox}" Width="200" FontWeight="SemiBold"></TextBox>
-                            </StackPanel>
-                        </MaterialDesign:Card>
-                        <MaterialDesign:Card Margin="0 10" >
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content=" تخفیف :"  Width="100" FontWeight="SemiBold"/>
-                                <TextBox Style="{StaticResource MaterialDesignTextBox}" Width="200" FontWeight="SemiBold"></TextBox>
-                            </StackPanel>
-                        </MaterialDesign:Card>
-                        <MaterialDesign:Card >
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="مبلغ قابل پرداخت:" Width="100" FontWeight="SemiBold"/>
-                                <TextBox Style="{StaticResource MaterialDesignTextBox}" FontWeight="SemiBold" Width="200"></TextBox>
-                            </StackPanel>
-                        </MaterialDesign:Card>
-                    </StackPanel>
-                </StackPanel>
-           
-            </GroupBox>
-        </StackPanel>
-        
-            <MaterialDesign:Card Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" Margin="20 20" Padding="5"> 
-                <StackPanel Orientation="Horizontal" >
-                <Button BorderThickness=".3" Width="120" Height="60" Style="{StaticResource MaterialDesignFlatButton}" Margin="10 0" >
-                    <StackPanel Orientation="Horizontal" >
-                        <TextBlock Text="ذخیره"  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="SemiBold" />
-                        <MaterialDesign:PackIcon Kind="ContentSaveEdit" VerticalAlignment="Top" HorizontalAlignment="Center" Width="30" Height="30"></MaterialDesign:PackIcon>
-
+                            </Button>
+                        </StackPanel>
                     </StackPanel>
 
-                </Button>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card VerticalAlignment="Center" Margin="2 0 2 0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Label  Content="قرارداد :" VerticalContentAlignment="Center" FontWeight="SemiBold"></Label>
+                        <StackPanel Orientation="Horizontal">
 
+                            <TextBox Width="120" Text="100251" FontWeight="SemiBold">
+                            </TextBox>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}">
+                                <StackPanel Margin="-5">
 
-                <Button BorderThickness=".3" Width="120" Height="60" Style="{StaticResource MaterialDesignFlatButton}" >
-                    <StackPanel Orientation="Horizontal" >
-                        <TextBlock Text="چاپ"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                        <MaterialDesign:PackIcon Kind="Printer" VerticalAlignment="Top" HorizontalAlignment="Center" Width="30" Height="30"></MaterialDesign:PackIcon>
+                                    <MaterialDesign:PackIcon Kind="DocumentSign" ></MaterialDesign:PackIcon>
 
+                                </StackPanel>
+
+                            </Button>
+
+                        </StackPanel>
                     </StackPanel>
-
-                </Button>
-                <Button BorderThickness=".3" Width="120" Height="60" Style="{StaticResource MaterialDesignFlatButton}"  Margin="10 0">
-                    <StackPanel Orientation="Horizontal"  >
-                        <TextBlock Text="جدید"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                        <MaterialDesign:PackIcon Kind="PencilAddOutline"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="30" Height="30"></MaterialDesign:PackIcon>
-
-                    </StackPanel>
-
-                </Button>
-                <Button BorderThickness=".3"  Width="120" Height="60" Style="{StaticResource MaterialDesignFlatButton}" Margin="10 0">
-                    <StackPanel  Orientation="Horizontal" >
-                        <TextBlock Text="حذف"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                        <MaterialDesign:PackIcon Kind="DeleteCircle" VerticalAlignment="Top" HorizontalAlignment="Center" Width="30" Height="30"></MaterialDesign:PackIcon>
-
-                    </StackPanel>
-
-                </Button>
+                </MaterialDesign:Card>
             </StackPanel>
-                
+            <StackPanel Grid.ColumnSpan="2" Margin="0 20" Orientation="Horizontal" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top">
+                <MaterialDesign:Card Margin="2 0 0 0" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Label  Content="شماره فاکتور :" FontWeight="Bold"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="120" Text="1024" VerticalAlignment="Center"  FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+                <MaterialDesign:Card Margin="10 0 0 0">
+                    <StackPanel Orientation="Horizontal"  >
+                        <CheckBox Style="{StaticResource MaterialDesignCheckBox}" Padding="2"  Content="نشانه گذاری" ></CheckBox>
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
+                <MaterialDesign:Card>
+                    <StackPanel Orientation="Horizontal">
+                        <Label   VerticalContentAlignment="Center" Content="کد خریدار  :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="80" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="0">
+                                <MaterialDesign:PackIcon Kind="Search"></MaterialDesign:PackIcon>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Width="100" Content="نام خریدار  :" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="250" Text="محمد ابراهیمی کته گنبدی اصل"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="وضعیت حساب :" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="250" Text="1205555555"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+            </StackPanel>
+            <StackPanel Margin="0 20" Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
+                <MaterialDesign:Card>
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="کد فروشنده :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="80" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+                            <Button  Margin="0" Style="{StaticResource MaterialDesignFlatButton}">
+                                <MaterialDesign:PackIcon Kind="Search"></MaterialDesign:PackIcon>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label VerticalContentAlignment="Center" Content="نام فروشنده  :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="250" Text="محمد ابراهیمی"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="وضعیت حساب :" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="250" Text="1205555555"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+            </StackPanel>
+
+            <StackPanel Margin="0 20" Orientation="Horizontal" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
+                <MaterialDesign:Card>
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="کد کالا :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="80" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"  Margin="0">
+                                <MaterialDesign:PackIcon Kind="Search"></MaterialDesign:PackIcon>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="نام کالا  :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="250" Text="شسته"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="بهای هر تن :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="250" Text="2700000"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+            </StackPanel>
+
+            <StackPanel  Margin="0" Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
+                <MaterialDesign:Card>
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="کد کامیون :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="80" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="0">
+                                <MaterialDesign:PackIcon Kind="Search"></MaterialDesign:PackIcon>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label VerticalContentAlignment="Center" Content="نام راننده  :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="250" Text="نام راننده"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+                <MaterialDesign:Card Margin="5 0 0 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content= "دستگاه بارگیری :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal"/>
+                        <ComboBox Style="{StaticResource MaterialDesignComboBox}" Width="255" Text="101"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            <ComboBoxItem Content="لودر شرکت"/>
+                            <ComboBoxItem Content="لودر قریشی"/>
+                            <ComboBoxItem Content="بیل شرکت"/>
+                        </ComboBox>
+
+
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+            </StackPanel>
+
+            <StackPanel  Margin="0" Orientation="Horizontal" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
+                <MaterialDesign:Card>
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="مقصد :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox IsEditable="True"  Style="{StaticResource MaterialDesignComboBox}"  Width="200" Text="شیراز بلوار اتحاد کوجه80 "  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+
+                            </ComboBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="5 0">
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox Style="{StaticResource MaterialDesignComboBox}"  Margin="0 0 2 0"  VerticalContentAlignment="Center" Width="100" FontWeight="Bold" FontSize="14">
+                            <ComboBoxItem IsSelected="True" Content="کرایه هرتن :"/>
+                            <ComboBoxItem Content="حق توزین :"/>
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="185" Text="2500000"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+                <MaterialDesign:Card >
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="نحوه پرداخت :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+
+                        <ComboBox Style="{StaticResource MaterialDesignComboBox}" Width="129" Text="101"   FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+
+                            <ComboBoxItem Content="نفدی"/>
+                            <ComboBoxItem Content="ملت"/>
+                            <ComboBoxItem Content="کشاورزی"/>
+                            <ComboBoxItem Content="اعتباری"/>
+                        </ComboBox>
+
+
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 20" VerticalAlignment="Center">
+                <MaterialDesign:Card >
+                    <StackPanel Orientation="Horizontal">
+                        <Label  VerticalContentAlignment="Center" Content="توضیحات :" Width="100" FontWeight="Bold" FontSize="14"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  Width="350" Text="توضیحات........"  FontSize="14"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" >
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </MaterialDesign:Card>
+
+            </StackPanel>
+            <StackPanel Grid.Row="9" Grid.Column="0"  >
+                <GroupBox >
+                    <StackPanel  Orientation="Horizontal">
+
+                        <StackPanel HorizontalAlignment="Left" Margin="5 0" >
+                            <MaterialDesign:Card >
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="وزن  پر: " Width="80" FontWeight="SemiBold"/>
+                                    <TextBox  Width="150" FontWeight="SemiBold"/>
+                                </StackPanel>
+                            </MaterialDesign:Card>
+                            <MaterialDesign:Card  Margin="0 10">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="وزن  خالی: "  Width="80" FontWeight="SemiBold"/>
+                                    <TextBox Width="150" FontWeight="SemiBold"></TextBox>
+                                </StackPanel>
+                            </MaterialDesign:Card>
+                            <MaterialDesign:Card >
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="وزن  کالا: " Width="80" FontWeight="SemiBold"/>
+                                    <TextBox  Width="150" FontWeight="Bold"></TextBox>
+                                </StackPanel>
+                            </MaterialDesign:Card>
+                        </StackPanel>
+
+
+                        <StackPanel HorizontalAlignment="Right" Margin="5 0" >
+                            <MaterialDesign:Card >
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="بهای کل " Width="100" FontWeight="SemiBold"/>
+                                    <TextBox Style="{StaticResource MaterialDesignTextBox}" Width="200" FontWeight="SemiBold"/>
+                                </StackPanel>
+                            </MaterialDesign:Card>
+                            <MaterialDesign:Card Margin="0 10" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content=" تخفیف :"  Width="100" FontWeight="SemiBold"/>
+                                    <TextBox Style="{StaticResource MaterialDesignTextBox}" Width="200" FontWeight="SemiBold"/>
+                                </StackPanel>
+                            </MaterialDesign:Card>
+                            <MaterialDesign:Card >
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="قابل پرداخت:" Width="100" FontWeight="SemiBold"/>
+                                    <TextBox Style="{StaticResource MaterialDesignTextBox}" FontWeight="SemiBold" Width="200"></TextBox>
+                                </StackPanel>
+                            </MaterialDesign:Card>
+                        </StackPanel>
+                    </StackPanel>
+
+                </GroupBox>
+            </StackPanel>
+
+            <MaterialDesign:Card Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" Margin="20 20" Padding="5">
+                <StackPanel Orientation="Horizontal" >
+                    <Button BorderThickness=".3" Width="120" Height="60" Style="{StaticResource MaterialDesignFlatButton}" Margin="10 0" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="ذخیره"  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="SemiBold" />
+                            <MaterialDesign:PackIcon Kind="ContentSaveEdit" VerticalAlignment="Top" HorizontalAlignment="Center" Width="30" Height="30"></MaterialDesign:PackIcon>
+
+                        </StackPanel>
+
+                    </Button>
+
+
+                    <Button BorderThickness=".3" Width="120" Height="60" Style="{StaticResource MaterialDesignFlatButton}" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="چاپ"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                            <MaterialDesign:PackIcon Kind="Printer" VerticalAlignment="Top" HorizontalAlignment="Center" Width="30" Height="30"/>
+
+                        </StackPanel>
+
+                    </Button>
+                    <Button BorderThickness=".3" Width="120" Height="60" Style="{StaticResource MaterialDesignFlatButton}"  Margin="10 0">
+                        <StackPanel Orientation="Horizontal"  >
+                            <TextBlock Text="جدید"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                            <MaterialDesign:PackIcon Kind="PencilAddOutline"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="30" Height="30"></MaterialDesign:PackIcon>
+
+                        </StackPanel>
+
+                    </Button>
+                    <Button BorderThickness=".3"  Width="120" Height="60" Style="{StaticResource MaterialDesignFlatButton}" Margin="10 0">
+                        <StackPanel  Orientation="Horizontal" >
+                            <TextBlock Text="حذف"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                            <MaterialDesign:PackIcon Kind="DeleteCircle" VerticalAlignment="Top" HorizontalAlignment="Center" Width="30" Height="30"></MaterialDesign:PackIcon>
+
+                        </StackPanel>
+
+                    </Button>
+                </StackPanel>
+
             </MaterialDesign:Card>
-            
-       
-    </Grid>
+
+
+        </Grid>
+
+    </MaterialDesign:Card>
     
 </UserControl>

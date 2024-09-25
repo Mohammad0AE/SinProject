@@ -1,0 +1,283 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.ItemsUserControls.company.AddEditGharardad"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sin.UI.UserControls.ItemsUserControls.company"
+            xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="800" FlowDirection="RightToLeft" >
+
+        <Grid Margin="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <Expander IsExpanded="True">
+                <Expander.FontSize>12
+                    
+                </Expander.FontSize>
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <MaterialDesign:PackIcon Kind="FileDocumentAdd" Margin="5"/>
+                            <TextBlock   Text="قرارداد جدید" FontSize="18" FontWeight="Bold"  VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Expander.Header>
+
+                    <StackPanel Margin="5" >
+                        <Expander  >
+                            <Expander.Header>
+                                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                <TextBlock FontWeight="Bold" Text="تعیین طرفین قرارداد" Width="150" VerticalAlignment="Center"/>
+                                    <MaterialDesign:PackIcon Kind="Tick" Margin="10 0" />
+                                </StackPanel>
+                            </Expander.Header>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition/>
+                                    <RowDefinition />
+                                    <RowDefinition/>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="0" Grid.RowSpan="2">
+                                    <MaterialDesign:Card BorderThickness=".3" Margin="5">
+                                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Row="0">
+                                            <Label Content="عنوان قرارداد:" Width="100"/>
+                                            <TextBox Width="250"/>
+                                            <Label Content="از تاریخ:"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBox Width="100"></TextBox>
+                                                <Button Style="{StaticResource MaterialDesignFlatButton}" >
+                                                    <MaterialDesign:PackIcon Kind="DateRange"/>
+                                                </Button>
+                                            </StackPanel>
+                                            <Label Content="تا تاریخ: "/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBox Width="100"></TextBox>
+                                                <Button Style="{StaticResource MaterialDesignFlatButton}" >
+                                                    <MaterialDesign:PackIcon Kind="DateRange"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                    </MaterialDesign:Card>
+
+                                    <GroupBox Margin="5 0 5 5" Header="مشخصات فروشنده" Style="{StaticResource MaterialDesignGroupBox}">
+                                        <StackPanel>
+                                            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                                <Label Content="نام فروشنده:" VerticalAlignment="Center" Width="100"/>
+                                                <ComboBox Width="200"/>
+                                                <Label Content="شماره ملی :" Width="100"/>
+                                                <TextBox Width="200"/>
+
+
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="موبایل:" Width="100"/>
+                                                <TextBox Width="200"/>
+                                                <Label Content="نام پدر:" Width="100" />
+                                                <TextBox Width="200"/>
+
+
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Margin="5 0 5 5" Header="مشخصات خریدار" Style="{StaticResource MaterialDesignGroupBox}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                                <Label Content="نام خریدار:" Width="100"/>
+                                                <ComboBox  Width="200"/>
+                                                <Label Content="شماره ملی :" Width="100"/>
+                                                <TextBox Width="200"/>
+
+
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="موبایل:" Width="100"/>
+                                                <TextBox Width="200"/>
+                                                <Label Content="نام پدر:" Width="100" />
+                                                <TextBox Width="200"/>
+
+
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <MaterialDesign:Card Margin="5 0 5 5" BorderThickness=".3">
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                            <Label Content="مبلغ:"/>
+                                            <TextBox Width="250"/>
+                                            <Label Content="شرحیات:"/>
+                                            <TextBox Width="350"/>
+                                        </StackPanel>
+                                    </MaterialDesign:Card>
+
+
+                                </StackPanel>
+                            </Grid>
+
+                        </Expander>
+                        <Expander   ExpandDirection="Down" >
+                            <Expander.Header>
+                                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                <TextBlock FontWeight="Bold" Text="کالاهای قرارداد" Width="150" VerticalAlignment="Center"/>
+                                    <MaterialDesign:PackIcon Kind="Tick" Margin="10 0" />
+                                </StackPanel>
+                            </Expander.Header>
+                            <Grid>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <MaterialDesign:Card >
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="کد کالا:" VerticalAlignment="Center"/>
+                                            <TextBox Width="60"/>
+                                            <Button Style="{StaticResource MaterialDesignFlatButton}">
+                                                <MaterialDesign:PackIcon Kind="Search"/>
+                                            </Button>
+                                            <Label Content="نام کالا:" VerticalAlignment="Center"/>
+                                            <TextBox Width="180"/>
+                                        </StackPanel>
+                                    </MaterialDesign:Card>
+                                    <MaterialDesign:Card >
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="بهای هرتن:" VerticalAlignment="Center"/>
+                                            <TextBox Width="100"/>
+                                            <Label Content="کرایه هر تن:" VerticalAlignment="Center"/>
+                                            <TextBox Width="100"/>
+                                            <Button BorderThickness="1" Width="40" Style="{StaticResource MaterialDesignFlatButton}">
+                                                <StackPanel Orientation="Horizontal" Margin="-5">
+                                                    <MaterialDesign:PackIcon Kind="Add"/>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button BorderThickness="1" Width="40" Style="{StaticResource MaterialDesignFlatButton}">
+                                                <StackPanel Orientation="Horizontal" Margin="-5">
+                                                    <MaterialDesign:PackIcon Kind="Remove"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+                                    </MaterialDesign:Card>
+                                </StackPanel>
+                                <GroupBox Margin="5 5" Header="لیست کالا های مورد قرارداد" Grid.Row="1">
+
+                                    <StackPanel>
+                                        <DataGrid>
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="کد کالا"/>
+                                                <DataGridTextColumn Header="نام کالا"/>
+                                                <DataGridTextColumn Header="بهای هر تن"/>
+                                                <DataGridTextColumn Header=" کرایه هرتن"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+
+                                    </StackPanel>
+                                </GroupBox>
+                            </Grid>
+                        </Expander>
+                    <Expander  >
+                        <Expander.Header>
+                            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                <TextBlock FontWeight="Bold" Text="متن قرارداد" Width="150" VerticalAlignment="Center"/>
+                                <MaterialDesign:PackIcon Kind="Tick" Margin="10 0" />
+                                
+                            </StackPanel>
+                        </Expander.Header>
+                        <StackPanel >
+                            <TextBox MaxHeight="250" Name="txtMatnGharardad" FontFamily="{StaticResource VazirMedium}" Text="متن قرارداد..." TextBlock.LineHeight="20" AcceptsReturn="True" AcceptsTab="True"
+             TextBlock.LineStackingStrategy="BlockLineHeight"
+             Padding="20,10,20,20" TextWrapping="Wrap">
+                                <TextBox.Background>
+                                    <DrawingBrush TileMode="Tile" Stretch="None" Viewport="0,0,20,20"
+                      ViewportUnits="Absolute" Opacity="1" >
+                                        <DrawingBrush.Drawing>
+                                            <GeometryDrawing>
+                                                <GeometryDrawing.Pen>
+                                                    <Pen Brush="RoyalBlue" Thickness=".1" />
+                                                </GeometryDrawing.Pen>
+                                                <GeometryDrawing.Geometry>
+                                                    <LineGeometry StartPoint="0,0" EndPoint="20,0"/>
+                                                </GeometryDrawing.Geometry>
+                                            </GeometryDrawing>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </TextBox.Background>
+
+                            </TextBox>
+                            <Button HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFlatButton}">
+                                <StackPanel Orientation="Horizontal" Margin="-5" HorizontalAlignment="Left">
+                                    <MaterialDesign:PackIcon Kind="Text" VerticalAlignment="Center"/>
+                                    <Label Content="متن قرارداد پیشنهادی"/>
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+
+                    </Expander>
+
+                    <StackPanel Grid.Row="1">
+
+                            <MaterialDesign:Card UniformCornerRadius="10" Height="50" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Name="btnSaveGharardad" Click="btnSaveGharardad_Click" Style="{StaticResource MaterialDesignFlatButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <MaterialDesign:PackIcon VerticalAlignment="Center" Kind="ContentSaveAdd" Margin="2"/>
+                                            <TextBlock Text=" ثبت" FontSize="18" FontWeight="Bold"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button  Margin="5 0" Style="{StaticResource MaterialDesignFlatButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <MaterialDesign:PackIcon Kind="FilePdfBox" VerticalAlignment="Center" Margin="2"/>
+                                            <TextBlock Text="خروجی PDF" />
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </MaterialDesign:Card>
+                        </StackPanel>
+                    </StackPanel>
+
+
+                </Expander>
+
+            <Expander FontWeight="Bold" Header="لیست قرارداد ها">
+                    <StackPanel>
+                        <DataGrid Name="dgvGharardad" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
+                              CanUserDeleteRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding title}" Header="عنوان قرارداد"/>
+                                <DataGridTextColumn Binding="{Binding kharidar}" Header="خریدار"/>
+                                <DataGridTextColumn Binding="{Binding foroshande}" Header="فروشنده"/>
+                                <DataGridTextColumn Binding="{Binding sdate}" Header="شروع قرارداد"/>
+                                <DataGridTextColumn Binding="{Binding edate}" Header="پایان قرارداد"/>
+                                <DataGridTextColumn Binding="{Binding mablagh}" Header="مبلغ"/>
+                                <DataGridTextColumn Binding="{Binding sharh}" Header="توضیحات"/>
+                                <DataGridTextColumn  Header="مسیر فایل"/>
+                                <DataGridTemplateColumn Header="ویرایش">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate >
+                                            <Button Name="btnEditgharadad" Click="btnEditgharadad_Click">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <MaterialDesign:PackIcon Kind="Edit"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+
+
+
+
+        </Grid>
+
+   
+</UserControl>

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.HesabdariUserControls.MoshtariGardeshUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sin.UI.UserControls.HesabdariUserControls"
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"  FlowDirection="RightToLeft" FontFamily="{StaticResource VazirMedium}" FontSize="12" FontWeight="UltraLight">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <MaterialDesign:Card Grid.Row="0" UniformCornerRadius="5">
+            <StackPanel  Margin="5">
+                <StackPanel Orientation="Horizontal" >
+
+                    <CheckBox Name="chkEnablename" Margin="5" VerticalAlignment="Center" IsChecked="True"/>
+                    <Label IsEnabled="{Binding ElementName=chkEnablename,Path=IsChecked}" Content="نام مشتری :" Margin="10 0"/>
+                    <ComboBox Width="200" IsEnabled="{Binding ElementName=chkEnablename,Path=IsChecked}"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 0">
+                        <CheckBox Name="chktarikh" IsChecked="True"/>
+                        <Label Content="از تاریخ :"/>
+                        <hc:PersianDatePicker IsEnabled="{Binding ElementName=chktarikh,Path=IsChecked}" SelectedDateFormat="Long" SelectedDate="{x:Static sys:DateTime.Now}"/>
+                        <Label Content="تا تاریخ :"/>
+                        <hc:PersianDatePicker IsEnabled="{Binding ElementName=chktarikh,Path=IsChecked}" SelectedDateFormat="Long" SelectedDate="{x:Static sys:DateTime.Now}"/>
+
+                    </StackPanel>
+       
+                </StackPanel>
+            </StackPanel>
+        </MaterialDesign:Card>
+    </Grid>
+    
+</UserControl>

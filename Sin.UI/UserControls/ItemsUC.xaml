@@ -5,122 +5,143 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sin.UI.UserControls"
              xmlns:UCs="clr-namespace:Sin.UI.UserControls.ItemsUserControls"
-             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1200" FlowDirection="RightToLeft">
-    <Grid>
-       
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <MaterialDesign:Card UniformCornerRadius="5">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
 
-        <TabControl  Grid.Row="0"  Grid.RowSpan="2" TabStripPlacement="Top"  HorizontalAlignment="Stretch" Style="{StaticResource MaterialDesignUniformTabControl}">
+            <TabControl   Grid.Row="0"  Grid.RowSpan="2" TabStripPlacement="Right"  HorizontalAlignment="Stretch" Style="{StaticResource MaterialDesignUniformTabControl}">
+             
+                    <TabItem   Width="95">
+                        <TabItem.Header>
 
-                <TabItem  Width="95">
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <MaterialDesign:PackIcon Kind="Factory" Margin="2"/>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Kind="Factory" Margin="2"/>
 
-                            <TextBlock Text="شرکت"/>
-                        </StackPanel>
-                    </TabItem.Header>
-
-                    <UCs:CompanyUC />
-
-                </TabItem>
-                <TabItem Width="95" >
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <MaterialDesign:PackIcon Kind="Bank" Margin="2" />
-
-                            <TextBlock Text="بانک"/>
-
-                        </StackPanel>
-
-                    </TabItem.Header>
+                                <TextBlock Text="شرکت"/>
+                            </StackPanel>
 
 
-                </TabItem>
-                <TabItem Width="95">
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <MaterialDesign:PackIcon Kind="CashRefund" Margin="2" />
+                        </TabItem.Header>
 
-                            <TextBlock Text="صندوق"/>
+                        <UCs:CompanyUC />
 
-                        </StackPanel>
+                    </TabItem>
+                    <TabItem Width="95" >
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Kind="Bank" Margin="2" />
 
-                    </TabItem.Header>
+                                <TextBlock Text="بانک"/>
 
+                            </StackPanel>
 
-                </TabItem>
-                <TabItem Width="95" >
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <MaterialDesign:PackIcon Margin="2" Kind="CreditCardRefund" />
+                        </TabItem.Header>
+                        <UCs:BankUC/>
 
-                            <TextBlock Text="هزینه"/>
+                    </TabItem>
+                    <TabItem Width="95">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Kind="CashRefund" Margin="2" />
 
-                        </StackPanel>
+                                <TextBlock Text="صندوق"/>
 
-                    </TabItem.Header>
+                            </StackPanel>
 
+                        </TabItem.Header>
 
-                </TabItem>
-                <TabItem  Width="95" >
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <MaterialDesign:PackIcon Kind="CashMultiple" Margin="2"/>
+                        <UCs:SandoghUC/>
+                    </TabItem>
+                    <TabItem Width="95" >
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Margin="2" Kind="CreditCardRefund" />
 
-                            <TextBlock Text="درآمد"/>
+                                <TextBlock Text="هزینه"/>
 
-                        </StackPanel>
+                            </StackPanel>
 
-                    </TabItem.Header>
+                        </TabItem.Header>
+                        <UCs:HazineUC/>
 
+                    </TabItem>
+                    <TabItem  Width="95" >
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Kind="CashMultiple" Margin="2"/>
 
-                </TabItem>
-                <TabItem   Width="105">
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <MaterialDesign:PackIcon Kind="People" Margin="2" />
+                                <TextBlock Text="درآمد"/>
 
-                            <TextBlock Text="کارمندان"/>
+                            </StackPanel>
+                        </TabItem.Header>
 
-                        </StackPanel>
+                        <UCs:DaramadUC/>
 
-                    </TabItem.Header>
+                    </TabItem>
+                    <TabItem   Width="105">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Kind="People" Margin="2" />
 
+                                <TextBlock Text="کارمندان"/>
 
-                </TabItem>
-                <TabItem Width="120" >
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <MaterialDesign:PackIcon Kind="TruckOutline" Margin="2" />
+                            </StackPanel>
 
-                            <TextBlock Text="ماشین آلات"/>
+                        </TabItem.Header>
 
-                        </StackPanel>
+                        <UCs:KarmandanUC/>
 
-                    </TabItem.Header>
+                    </TabItem>
+                    <TabItem Width="120" >
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Kind="TruckOutline" Margin="2" />
 
+                                <TextBlock Text="ماشین آلات"/>
 
-                </TabItem>
-                <TabItem  Width="95">
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <MaterialDesign:PackIcon Margin="2" Kind="InvoiceLineItemsOutline" />
+                            </StackPanel>
 
-                            <TextBlock Text="سایر..."/>
+                        </TabItem.Header>
+                        <UCs:MachinesUC/>
+                    </TabItem>
+                    <TabItem  Width="95">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Margin="2" Kind="ServiceToolbox" />
 
-                        </StackPanel>
+                                <TextBlock Text="خدماتی"/>
 
-                    </TabItem.Header>
+                            </StackPanel>
 
+                        </TabItem.Header>
 
-                </TabItem>
+                        <UCs:KhadamatiUC
+              />
+                    </TabItem>
+                    <TabItem  Width="95">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <MaterialDesign:PackIcon Margin="2" Kind="InvoiceLineItemsOutline" />
+
+                                <TextBlock Text="سایر..."/>
+
+                            </StackPanel>
+
+                        </TabItem.Header>
+
+                        <UCs:OtherItemUc/>
+                    </TabItem>
+              
+          
 
 
 
@@ -129,7 +150,9 @@
 
 
 
-   
-     
-    </Grid>
+
+
+        </Grid>
+
+    </MaterialDesign:Card>
 </UserControl>

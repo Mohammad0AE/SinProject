@@ -1,0 +1,249 @@
+﻿<UserControl x:Class="Sin.UI.UserControls.ItemsUserControls.MachinesUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sin.UI.UserControls.ItemsUserControls"
+             xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="850" d:DesignWidth="800" FlowDirection="RightToLeft" MinWidth="1100">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"  >
+            <StackPanel >
+
+                <MaterialDesign:Card UniformCornerRadius="5">
+                    
+                        <GroupBox Header="نوع دستگاه" >
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Name="rbbargiri" Content="بارگیری" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                <RadioButton Name="rbbarbari" IsChecked="True" Margin="40 0" Content="باربری" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                <RadioButton Name="rbother" Content="سایر" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                        </GroupBox>
+
+                
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="0 10" UniformCornerRadius="5">
+                    <GroupBox Header="مشخصات دستگاه" >
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Content="پلاک/عنوان :"/>
+                                <TextBox Width="150"/>
+                                <Label Content="طرف حساب :" Width="80"/>
+                                <ComboBox Width="150"/>
+
+
+                            </StackPanel>
+                            <GroupBox  IsEnabled="{Binding ElementName=rbbarbari,Path=IsChecked}" Header="مشخصات دستگاه باربری" Margin="20" Style="{StaticResource MaterialDesignHeaderedContentControl}">
+                                <MaterialDesign:Card Margin="5" UniformCornerRadius="5">
+                                    <StackPanel >
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label  Content="نوع دستگاه باربری :"/>
+                                            <TextBox Width="150" Text="نیسان"/>
+                                            <Label Content="وزن خالی :"/>
+                                            <TextBox Width="150"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                </MaterialDesign:Card>
+                            </GroupBox>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="شرح :" Width="80"/>
+                                <TextBox Width="300"/>
+                                <CheckBox Content="فعال" Margin="20 0"/>
+                                <CheckBox Content="محاسبه کرایه"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </MaterialDesign:Card>
+                <MaterialDesign:Card Margin="0 10" UniformCornerRadius="5">
+                    <GroupBox Header="مشخصات مالکین">
+                        <StackPanel >
+                            <StackPanel Orientation="Horizontal">
+                                <GroupBox Header="نام مالک:" Style="{StaticResource MaterialDesignHeaderedContentControl}">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <RadioButton Content="متفرقه :" Name="rmbOtherMalek"></RadioButton>
+                                        <TextBox Width="150" IsEnabled="{Binding ElementName=rmbOtherMalek,Path=IsChecked}"/>
+                                        <RadioButton Content="تنخواه گردان :" Name="rmbTankhahMalek" Margin="5 0"></RadioButton>
+                                        <ComboBox Width="150" IsEnabled="{Binding ElementName=rmbTankhahMalek,Path=IsChecked}">
+
+                                        </ComboBox>
+
+                                    </StackPanel>
+
+                                </GroupBox>
+
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 10">
+                                <Label Content="سهم :" VerticalAlignment="Center"/>
+                                <TextBox Width="50" />
+                                <MaterialDesign:PackIcon Kind="Percent" VerticalAlignment="Center"/>
+                                <Label Margin="20 0 0 0" Content="شماره تماس :" VerticalAlignment="Center"/>
+                                <TextBox Width="130"/>
+                                <CheckBox Content="ارسال پیام" VerticalAlignment="Bottom" Margin="10 0"/>
+                            </StackPanel>
+                            <StackPanel >
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="10 0">
+                                        <MaterialDesign:PackIcon  Kind="Add"/>
+                                    </Button>
+                                    <Button Style="{StaticResource MaterialDesignFlatButton}" >
+                                        <MaterialDesign:PackIcon Kind="Remove"/>
+                                    </Button>
+                                </StackPanel>
+                                <DataGrid Name="dgvmalek" MaxHeight="200" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="نام" Binding="{Binding name}"/>
+                                        <DataGridTextColumn Binding="{Binding sahm}">
+                                            <DataGridTextColumn.Header>
+                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                    <Label Content="سهم" VerticalAlignment="Center"/>
+                                                    <MaterialDesign:PackIcon Kind="Percent" VerticalAlignment="Center"/>
+
+                                                </StackPanel>
+                                            </DataGridTextColumn.Header>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="موبایل" />
+                                        <DataGridCheckBoxColumn Header="ارسال پیام"/>
+                                    </DataGrid.Columns>
+
+                                </DataGrid>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </GroupBox>
+
+                </MaterialDesign:Card>
+
+
+            </StackPanel>
+
+            <StackPanel Margin="20 0">
+                <MaterialDesign:Card UniformCornerRadius="5"  >
+                    <GroupBox Header="  مشخصات راننده ها">
+                        <StackPanel >
+
+                            <GroupBox  Header="نام راننده  :" Style="{StaticResource MaterialDesignHeaderedContentControl}">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <RadioButton Content="متفرقه :" VerticalAlignment="Center" Name="rbmother"></RadioButton>
+                                    <TextBox Width="150" IsEnabled="{Binding ElementName=rbmother,Path=IsChecked}"/>
+                                    <RadioButton Content="کارمند :" VerticalAlignment="Center" Name="rbkarmand" Margin="5 0"></RadioButton>
+                                    <ComboBox Width="150" IsEnabled="{Binding ElementName=rbkarmand,Path=IsChecked}">
+
+                                    </ComboBox>
+                                </StackPanel>
+                            </GroupBox>
+                            <MaterialDesign:Card UniformCornerRadius="5" Margin="0 10" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="شماره تماس :" VerticalAlignment="Center" Margin="0 10"/>
+                                    <TextBox Width="130" VerticalAlignment="Center"/>
+                                    <CheckBox Content="فعال" Margin="10 0" VerticalAlignment="Center"/>
+
+                                </StackPanel>
+                            </MaterialDesign:Card>
+                            <StackPanel >
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Style="{StaticResource MaterialDesignFlatButton}" Margin="10 0">
+                                        <MaterialDesign:PackIcon  Kind="Add"/>
+                                    </Button>
+                                    <Button Style="{StaticResource MaterialDesignFlatButton}" >
+                                        <MaterialDesign:PackIcon Kind="Remove"/>
+                                    </Button>
+                                </StackPanel>
+                                <DataGrid Name="dgvRanande" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" MaxHeight="200">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="نام" Binding="{Binding name}"/>
+                                        <DataGridTextColumn Header="موبایل" Binding="{Binding mobile}" />
+                                        <DataGridCheckBoxColumn Header="فعال" />
+                                    </DataGrid.Columns>
+
+                                </DataGrid>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </GroupBox>
+                </MaterialDesign:Card>
+
+                <StackPanel >
+                    <MaterialDesign:Card UniformCornerRadius="5" Margin="10">
+                        <StackPanel Orientation="Horizontal">
+                            <MaterialDesign:PackIcon Kind="Search" VerticalAlignment="Center"/>
+                            <TextBox Width="300"/>
+                        </StackPanel>
+                    </MaterialDesign:Card>
+                    <DataGrid  Name="dgvdastgah" MinWidth="400"  IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="نوع دستگاه" Binding="{Binding nodastgah}" SortDirection="Ascending"/>
+                            <DataGridTextColumn Header="پلاک / عنوان" Binding="{Binding title}"/>
+                            <DataGridTextColumn Header="طرف حساب"/>
+                            <DataGridCheckBoxColumn Header="محاسبه کرایه"/>
+                        </DataGrid.Columns>
+                        <DataGrid.RowDetailsTemplate>
+
+                            <DataTemplate>
+                                <ScrollViewer >
+                                    <StackPanel>
+                                        <Expander MaxHeight="200" Margin="10" Header="راننده ها">
+                                            <DataGrid MaxHeight="200" ItemsSource="{Binding ranandes}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="نام راننده " Binding="{Binding name}"/>
+                                                    <DataGridTextColumn Header="شماره تماس" Binding="{Binding mobile}"/>
+                                                    <DataGridCheckBoxColumn Header="فعال"/>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </Expander>
+                                        <Expander  Header="مالکین" Margin="10" MaxHeight="150">
+                                            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="نام مالک"/>
+                                                    <DataGridTextColumn Header="سهم "/>
+                                                    <DataGridCheckBoxColumn Header="محاسبه کرایه"/>
+                                                    <DataGridCheckBoxColumn Header="فعال "/>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </Expander>
+                                    </StackPanel>
+
+                                </ScrollViewer>
+
+
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+
+
+        <MaterialDesign:Card Grid.Row="1" UniformCornerRadius="5" >
+            <StackPanel Margin="10 0" Orientation="Horizontal">
+                <Button Style="{StaticResource MaterialDesignFlatButton}">
+                    <StackPanel Margin="-5" Orientation="Horizontal">
+                        <MaterialDesign:PackIcon VerticalAlignment="Center" Kind="ContentSave"/>
+                        <Label Content="ذخیره" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}">
+                    <StackPanel Margin="-5" Orientation="Horizontal">
+                        <MaterialDesign:PackIcon VerticalAlignment="Center" Kind="PencilAdd"/>
+                        <Label Content="جدید" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </MaterialDesign:Card>
+
+    </Grid>
+ 
+ 
+
+
+</UserControl>
