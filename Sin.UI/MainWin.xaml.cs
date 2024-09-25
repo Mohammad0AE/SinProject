@@ -60,14 +60,29 @@ namespace Sin.UI
             paletteHelper.SetTheme(theme);
         }
 
-        private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+      
+
+      
+
+        private void topPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.WindowState = WindowState.Maximized;
+            this.DragMove(); 
         }
 
-        private void closebtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void btnclose_Click(object sender, RoutedEventArgs e)
         {
-           Application.Current.Shutdown();
+            Application.Current.Shutdown();
+
+        }
+
+        private void btnmax_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState=this.WindowState==WindowState.Normal?WindowState.Maximized:WindowState.Normal;
+        }
+
+        private void btnmin_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState=this.WindowState==WindowState.Normal||this.WindowState==WindowState.Maximized?WindowState.Minimized:WindowState.Normal;
         }
     }
 }

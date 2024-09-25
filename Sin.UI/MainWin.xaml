@@ -7,7 +7,7 @@
         xmlns:UCs="clr-namespace:Sin.UI.UserControls"
         xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen"
-        WindowStyle="None" Width="1200" Height="900" FontFamily="{StaticResource VazirMedium}" Style="{StaticResource MaterialDesignWindow}"  >
+        WindowStyle="None" Width="1200" Height="900" MouseDown="topPanel_MouseLeftButtonDown" AllowsTransparency="True" FontFamily="{StaticResource VazirMedium}" Style="{StaticResource MaterialDesignWindow}"  >
 
     <Grid  >
         <Grid.RowDefinitions>
@@ -17,11 +17,26 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal">
-            <MaterialDesign:PackIcon Kind="Close" Name="closebtn" MouseLeftButtonDown="closebtn_MouseLeftButtonDown" Foreground="{DynamicResource foreground}"/>
-            <MaterialDesign:PackIcon Margin="5 0" Kind="Maximize" MouseDoubleClick="PackIcon_MouseDoubleClick" Foreground="{DynamicResource foreground}"/>
-            <MaterialDesign:PackIcon Kind="Minimize" Margin="5 0" Foreground="{DynamicResource foreground}"/>
+        <StackPanel Name="topPanel" MouseLeftButtonDown="topPanel_MouseLeftButtonDown"
+                    Margin="5 0" Orientation="Horizontal">
+            <Button Click="btnclose_Click" Name="btnclose"  VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
+                <StackPanel Margin="-5">
+                    <MaterialDesign:PackIcon Foreground="DarkRed" Kind="Close"/>
 
+                </StackPanel>
+            </Button>
+            <Button Click="btnmax_Click" Name="btnmax" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
+                <StackPanel Margin="-5">
+                    <MaterialDesign:PackIcon  Kind="Maximize" />
+
+                </StackPanel>
+            </Button>
+            <Button Click="btnmin_Click" Name="btnmin" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
+                <StackPanel Margin="-5">
+                    <MaterialDesign:PackIcon  Kind="Minimize" />
+
+                </StackPanel>
+            </Button>
         </StackPanel>
         <StackPanel Grid.Row="0" HorizontalAlignment="Right">
             <MaterialDesign:PopupBox Foreground="{DynamicResource foreground}" 
@@ -41,7 +56,7 @@
           
 
                 <TabControl HorizontalAlignment="Left" Margin="0 40" Style="{StaticResource MaterialDesignUniformTabControl}" TabStripPlacement="Left" >
-                    <TabItem HorizontalAlignment="Left">
+                    <TabItem Width="150" HorizontalAlignment="Left">
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <MaterialDesign:PackIcon Kind="Home" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -50,7 +65,7 @@
                         </TabItem.Header>
                         <UCs:HomeUC />
                     </TabItem>
-                    <TabItem HorizontalAlignment="Left">
+                <TabItem Width="150" HorizontalAlignment="Left">
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <MaterialDesign:PackIcon Kind="WeightKg" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -58,7 +73,7 @@
                             </StackPanel>
                         </TabItem.Header>
                     </TabItem>
-                    <TabItem HorizontalAlignment="Left">
+                <TabItem Width="150" HorizontalAlignment="Left">
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                 <MaterialDesign:PackIcon Kind="InvoiceLineItems" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -67,7 +82,7 @@
                         </TabItem.Header>
                         <UCs:ItemsUC/>
                     </TabItem>
-                    <TabItem HorizontalAlignment="Left">
+                    <TabItem Width="150" HorizontalAlignment="Left">
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                 <MaterialDesign:PackIcon Kind="AttachMoney" HorizontalAlignment="Center" VerticalAlignment="Center"/>

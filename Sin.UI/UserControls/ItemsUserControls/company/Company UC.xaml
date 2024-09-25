@@ -1,15 +1,18 @@
-﻿<UserControl x:Class="Sin.UI.UserControls.ItemsUserControls.CompanyUC"
+﻿<UserControl  x:Class="Sin.UI.UserControls.ItemsUserControls.CompanyUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sin.UI.UserControls.ItemsUserControls"
-             xmlns:UCs="clr-namespace:Sin.UI.UserControls.HomeUserControls"
+             xmlns:UCs="clr-namespace:Sin.UI.UserControls.ItemsUserControls.company"
             
              xmlns:MAterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" FlowDirection="RightToLeft" d:DesignWidth="800">
-    <Grid Margin="5">
+    <Border BorderThickness="4" BorderBrush="{StaticResource MaterialDesignDarkSeparatorBackground}">
+
+     
+    <Grid  Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
@@ -20,37 +23,53 @@
             <RowDefinition/>
 
         </Grid.RowDefinitions>
-        <TabControl  Grid.RowSpan="3" VerticalAlignment="Top" TabStripPlacement="Left" Style="{StaticResource MaterialDesignNavigationRailTabControl}" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
-            <TabItem Width="95">
-
+        <TabControl   Grid.RowSpan="3" VerticalAlignment="Stretch" TabStripPlacement="Bottom" Style="{StaticResource MaterialDesignUniformTabControl}" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
+            
+    
+            <TabItem IsSelected="True">
+                
                 <TabItem.Header>
-                    <StackPanel Orientation="Vertical">
-                        <MAterialDesign:PackIcon Kind="Factory" Margin="2" HorizontalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal">
+                        <MAterialDesign:PackIcon Kind="People" HorizontalAlignment="Center" Margin="2"/>
 
                         <TextBlock Text="شرکت"/>
                     </StackPanel>
-
-                </TabItem.Header>
-          
-         
-              
-            </TabItem>
-            <TabItem Width="95">
-                
-                <TabItem.Header>
-                    <StackPanel Orientation="Vertical">
-                        <MAterialDesign:PackIcon Kind="People" HorizontalAlignment="Center" Margin="2"/>
-
-                        <TextBlock Text="سهامداران"/>
-                    </StackPanel>
                
                 </TabItem.Header>
-           
-            </TabItem>
-        
-        
-        </TabControl>
+                    <UCs:AddEditeCompany/>
+                </TabItem>
+                <TabItem >
+
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <MAterialDesign:PackIcon Kind="People" HorizontalAlignment="Center" Margin="2"/>
+
+                            <TextBlock Text="سهامداران"/>
+                        </StackPanel>
+
+                    </TabItem.Header>
+                    <UCs:AddEditSahamdar/>
+                </TabItem>
+
+                <TabItem  BorderThickness="1" >
+
+                    <TabItem.Header >
+                        <StackPanel Orientation="Horizontal">
+                            <MAterialDesign:PackIcon Kind="DocumentSign" Margin="2" HorizontalAlignment="Center"/>
+
+                            <TextBlock  Text="قرارداد ها"/>
+                        </StackPanel>
+
+                    </TabItem.Header>
+                    <UCs:AddEditGharardad/>
 
 
-    </Grid>
+                </TabItem>
+
+            </TabControl>
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="3">
+
+            </StackPanel>
+        </Grid>
+    </Border>
 </UserControl>
